@@ -1,9 +1,353 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-  <title>Mi primera página en GitHub Pages</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solución: Página no visible en GitHub</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --dark: #1f2937;
+            --light: #f3f4f6;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            min-height: 100vh;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+        
+        header {
+            background: var(--dark);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 2rem;
+        }
+        
+        .section {
+            margin-bottom: 2.5rem;
+        }
+        
+        h2 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--light);
+        }
+        
+        .checklist {
+            background: var(--light);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1.5rem 0;
+        }
+        
+        .check-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+        
+        .check-icon {
+            margin-right: 15px;
+            font-size: 1.5rem;
+            min-width: 30px;
+        }
+        
+        .success { color: var(--success); }
+        .warning { color: var(--warning); }
+        .danger { color: var(--danger); }
+        
+        .code-block {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 1.5rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 1.5rem 0;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .solution-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid var(--primary);
+        }
+        
+        .card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .card.success { border-left-color: var(--success); }
+        .card.warning { border-left-color: var(--warning); }
+        .card.danger { border-left-color: var(--danger); }
+        
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 10px 5px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn-success { background: var(--success); }
+        .btn-warning { background: var(--warning); }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: var(--dark);
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .solution-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
-  <h1>¡Hola mundo desde GitHub Pages!</h1>
+    <div class="container">
+        <header>
+            <h1>🔍 Mi página no se visualiza en GitHub</h1>
+            <p class="subtitle">Solución de problemas y guía paso a paso</p>
+        </header>
+        
+        <div class="content">
+            <div class="section">
+                <h2>Problemas comunes y soluciones</h2>
+                <p>Si has subido tu página a GitHub pero no puedes verla en el navegador, sigue esta guía para identificar y resolver el problema.</p>
+                
+                <div class="checklist">
+                    <h3>Checklist de verificación</h3>
+                    <div class="check-item">
+                        <div class="check-icon success">✅</div>
+                        <div>
+                            <strong>¿Activaste GitHub Pages?</strong>
+                            <p>Ve a Settings → Pages → Selecciona la rama (main/master) → Save</p>
+                        </div>
+                    </div>
+                    <div class="check-item">
+                        <div class="check-icon warning">⚠️</div>
+                        <div>
+                            <strong>¿Tu archivo principal se llama index.html?</strong>
+                            <p>GitHub Pages busca un archivo con este nombre para mostrar como página principal.</p>
+                        </div>
+                    </div>
+                    <div class="check-item">
+                        <div class="check-icon danger">❌</div>
+                        <div>
+                            <strong>¿Esperaste unos minutos?</strong>
+                            <p>Los cambios en GitHub Pages pueden tardar de 1 a 10 minutos en propagarse.</p>
+                        </div>
+                    </div>
+                    <div class="check-item">
+                        <div class="check-icon warning">⚠️</div>
+                        <div>
+                            <strong>¿Usas rutas relativas?</strong>
+                            <p>Asegúrate de que los archivos CSS, JS e imágenes usen rutas relativas (ej: "css/style.css" en lugar de "/css/style.css").</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>Soluciones paso a paso</h2>
+                
+                <div class="solution-cards">
+                    <div class="card success">
+                        <h3>1. Verificar configuración de GitHub Pages</h3>
+                        <p>Asegúrate de que GitHub Pages esté activado en la rama correcta:</p>
+                        <ol>
+                            <li>Ve a tu repositorio en GitHub</li>
+                            <li>Haz clic en "Settings"</li>
+                            <li>Desplázate hasta la sección "Pages"</li>
+                            <li>Selecciona la rama (normalmente main o master)</li>
+                            <li>Haz clic en "Save"</li>
+                        </ol>
+                        <a href="https://docs.github.com/es/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site" class="btn btn-success" target="_blank">Ver guía oficial</a>
+                    </div>
+                    
+                    <div class="card warning">
+                        <h3>2. Estructura correcta de archivos</h3>
+                        <p>Tu repositorio debe tener esta estructura:</p>
+                        <div class="code-block">
+                            tu-repositorio/<br>
+                            ├── index.html<br>
+                            ├── css/<br>
+                            │   └── style.css<br>
+                            ├── js/<br>
+                            │   └── script.js<br>
+                            └── images/<br>
+                                └── logo.png
+                        </div>
+                        <p>El archivo <strong>index.html</strong> debe estar en la raíz del repositorio.</p>
+                    </div>
+                    
+                    <div class="card danger">
+                        <h3>3. Solucionar errores comunes</h3>
+                        <p>Problemas frecuentes y sus soluciones:</p>
+                        <ul>
+                            <li><strong>Error 404:</strong> Asegúrate de que el archivo index.html existe</li>
+                            <li><strong>CSS/JS no carga:</strong> Usa rutas relativas</li>
+                            <li><strong>Página en blanco:</strong> Revisa la consola del navegador (F12) para errores</li>
+                            <li><strong>Cambios no aparecen:</strong> Espera unos minutos y limpia la cache (Ctrl+F5)</li>
+                        </ul>
+                        <button class="btn btn-warning" onclick="checkURL()">Verificar URL</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>Verificador de URL de GitHub Pages</h2>
+                <p>Introduce tu nombre de usuario y repositorio para verificar tu URL:</p>
+                
+                <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin: 20px 0;">
+                    <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                        <input type="text" id="githubUser" placeholder="Tu usuario de GitHub" style="flex: 1; padding: 12px; border: 1px solid #ddd; border-radius: 5px; min-width: 200px;">
+                        <input type="text" id="githubRepo" placeholder="Nombre del repositorio" style="flex: 1; padding: 12px; border: 1px solid #ddd; border-radius: 5px; min-width: 200px;">
+                        <button class="btn" onclick="generateURL()">Generar URL</button>
+                    </div>
+                    
+                    <div id="urlResult" style="margin-top: 20px; padding: 15px; background: #e9ecef; border-radius: 5px; display: none;">
+                        <p>Tu URL de GitHub Pages debería ser:</p>
+                        <h3 id="generatedURL" style="word-break: break-all;"></h3>
+                        <p>Si esta URL no funciona, asegúrate de que tu repositorio es público y que has activado GitHub Pages.</p>
+                        <a id="visitLink" class="btn" target="_blank" style="margin-top: 10px;">Visitar página</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>Recursos adicionales</h2>
+                <p>Si aún tienes problemas, estos recursos pueden ayudarte:</p>
+                <div class="checklist">
+                    <div class="check-item">
+                        <div class="check-icon">🔗</div>
+                        <div>
+                            <strong><a href="https://docs.github.com/es/pages" target="_blank">Documentación oficial de GitHub Pages</a></strong>
+                            <p>Guía completa de GitHub Pages con ejemplos y solución de problemas.</p>
+                        </div>
+                    </div>
+                    <div class="check-item">
+                        <div class="check-icon">🔗</div>
+                        <div>
+                            <strong><a href="https://pages.github.com/" target="_blank">Sitio oficial de GitHub Pages</a></strong>
+                            <p>Ejemplos y guías para crear sitios con GitHub Pages.</p>
+                        </div>
+                    </div>
+                    <div class="check-item">
+                        <div class="check-icon">🔗</div>
+                        <div>
+                            <strong><a href="https://github.com/community/community/discussions/categories/github-pages" target="_blank">Foro de la comunidad</a></strong>
+                            <p>Pregunta a otros usuarios que pueden haber tenido el mismo problema.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>© 2023 Solución de problemas de GitHub Pages | Si necesitas más ayuda, consulta la documentación oficial de GitHub</p>
+        </footer>
+    </div>
+
+    <script>
+        function generateURL() {
+            const user = document.getElementById('githubUser').value.trim();
+            const repo = document.getElementById('githubRepo').value.trim();
+            
+            if (!user || !repo) {
+                alert('Por favor, introduce tu usuario y el nombre del repositorio');
+                return;
+            }
+            
+            const url = `https://${user}.github.io/${repo}/`;
+            document.getElementById('generatedURL').textContent = url;
+            document.getElementById('urlResult').style.display = 'block';
+            
+            const visitLink = document.getElementById('visitLink');
+            visitLink.href = url;
+            visitLink.textContent = 'Visitar ' + url;
+        }
+        
+        function checkURL() {
+            const user = prompt('Introduce tu nombre de usuario de GitHub:');
+            if (!user) return;
+            
+            const repo = prompt('Introduce el nombre de tu repositorio:');
+            if (!repo) return;
+            
+            const url = `https://${user}.github.io/${repo}/`;
+            window.open(url, '_blank');
+        }
+        
+        // Simular la verificación de configuración
+        console.log('Verificación de GitHub Pages iniciada');
+        console.log('1. Asegúrate de que GitHub Pages está activado en Settings → Pages');
+        console.log('2. Confirma que tu archivo principal se llama index.html');
+        console.log('3. Verifica que estás usando la URL correcta: https://tuusuario.github.io/turepositorio/');
+    </script>
 </body>
 </html>
